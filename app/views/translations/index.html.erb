@@ -1,11 +1,18 @@
-<div id="reference">
+<div id="translation">
 	English phrase: <spam class="reference_translation"><%= @reference_translation.translation %></spam>
 </div>
 <br>
-<div>
+
+<div id="edit_translation">
+	<%= render 'form' %>
+</div>
+
+
+<div id="other_key_translations">
 	<ul>
 	<% @translations.each do |t| %>
-		<li class="translated_list"><%= link_to t.translation, new_key_translation_path(@key) %></li>
+		<li><span class="translated_list"><%= t.translation %></span> (<%= t.votes.count %>)</li>
 	<% end %>
 	</ul>
 </div>
+

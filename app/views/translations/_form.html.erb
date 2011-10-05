@@ -1,4 +1,4 @@
-<%= form_for [@key, @translation], :url => { :action => "create_or_update" } do |f| %>
+<%= form_for [@key, @translation] do |f| %>
 	
 	<%= f.text_area :translation, :rows => 5, :cols => 80 %><br>
 	<%= f.submit "Save translation" %>
