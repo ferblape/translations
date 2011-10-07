@@ -1,6 +1,6 @@
 <%= form_for [@key, @translation] do |f| %>
 	
 	<%= f.text_area :translation, :rows => 5, :cols => 80 %><br>
-	<%= f.submit "Save translation" %>
+	<%= f.submit "Save translation", :class => "button" %>
 	
 <% end %>

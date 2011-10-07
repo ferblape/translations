@@ -4,4 +4,8 @@ class Key < ActiveRecord::Base
   
   validates :key, :uniqueness => true, :presence => true
   
+  def english 
+    t = translations.where(:language => "en").first
+    t.translation
+  end
 end

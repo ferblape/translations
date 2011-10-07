@@ -1,5 +1,5 @@
 function fill_translation(tr){
-	   $('#translation_translation').val(tr); //this puts the textarea for the id labeled 'area'
+	   $('#translation_translation').val(tr); 
 }
 
 $(document).ready(function(){
