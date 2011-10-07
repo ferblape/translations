@@ -1,3 +1,4 @@
+# coding: UTF-8
 class Translation < ActiveRecord::Base
   belongs_to :key
   belongs_to :user

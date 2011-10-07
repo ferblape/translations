@@ -1,7 +1,9 @@
 <div id="keys">
-	<ul>	
+	<table border="0" cellspacing="5" cellpadding="5">
 	<% Key.all.each do |k| %>
-		<li><%=  k.key %>, <%= k.english %></li>
+		<tr>
+			<td><%= link_to k.english, key_translations_path(k) %></td><td><%= %></td>
+		</tr>
 	<% end %>
-	</ul>
+	</table>
 </div>

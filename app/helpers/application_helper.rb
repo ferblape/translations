@@ -1,3 +1,4 @@
+# coding: UTF-8
 module ApplicationHelper
   
   def flash_helper
