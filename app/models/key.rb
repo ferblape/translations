@@ -10,4 +10,9 @@ class Key < ActiveRecord::Base
     t.translation
   end
   
+  def most_voted(language)
+    if t = translations.where(:language => language).order("votes_count DESC").first
+      t.translation
+    end
+  end
 end

@@ -1,6 +1,9 @@
 <div id="translation">
 	English phrase: <spam class="reference_translation"><%= @reference_translation.translation %></spam>
 </div>
+<div id="return">
+	<%= link_to "Volver", keys_path%>
+</div>
 <br>
 
 <div id="edit_translation">
@@ -11,7 +14,7 @@
 <div id="other_translations">
 	<ul>
 	<% @translations.each do |t| %>
-		<li><span class="translated_list"><%= t.translation %></span> (<%= t.votes.count %>)</li>
+		<li><span class="translated_list"><%= t.translation %></span> (<%= t.votes_count %>)</li>
 	<% end %>
 	</ul>
 </div>

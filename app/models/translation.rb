@@ -3,7 +3,7 @@ class Translation < ActiveRecord::Base
   belongs_to :key
   belongs_to :user
   has_many :votes, :dependent => :destroy
-#  scope :order_by_votes, order("#{translations}.votes_count DESC")
+  # scope :order_by_votes, order("#{translations}.votes_count DESC")
   
   validates :language, :presence => true
   validates :translation, :presence => true
@@ -12,13 +12,12 @@ class Translation < ActiveRecord::Base
   after_create :create_or_update_vote
  
  
- 
   def save_if_not_exist
     if t = Translation.where(:translation => translation).first
       if vote = t.key.votes.where(:user_id => user_id).first
-         vote.update_attributes(:translation_id => t.id)
+         vote.update_attribute(:translation, t)
       else
-        Vote.create(:translation_id => t.id, :user_id => user_id)
+        Vote.create(:translation => t, :user => user)
       end
     else
       save
@@ -28,9 +27,9 @@ class Translation < ActiveRecord::Base
   private
   def create_or_update_vote
     if vote = key.votes.where(:user_id => user_id).first
-       vote.update_attribute(:translation_id, id)
+       vote.update_attribute(:translation, self)
     else 
-      votes.create(:user_id => user_id)
+      votes.create(:user => user)
     end   
   end
   
