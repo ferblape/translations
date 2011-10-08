@@ -14,7 +14,7 @@
 <div id="other_translations">
 	<ul>
 	<% @translations.each do |t| %>
-		<li><span class="translated_list"><%= t.translation %></span> (<%= t.votes_count %>)</li>
+		<li class="translated_list"><span><%= t.translation %></span> (<%= t.votes_count %>)</li>
 	<% end %>
 	</ul>
 </div>

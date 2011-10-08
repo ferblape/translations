@@ -4,7 +4,7 @@ function fill_translation(tr){
 
 $(document).ready(function(){
 	$('.translated_list').click(function(e){
-		fill_translation($(this).html());
+		fill_translation($(this).children('span').html());
 		return false;
 	});
 });
