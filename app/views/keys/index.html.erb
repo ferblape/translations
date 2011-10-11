@@ -1,6 +1,6 @@
 <div id="search">
 <%= form_tag search_path, :method => 'get' do %>
-	<%= search_field_tag :search, params[:search], :placeholder => "Buscar" %>
+	<%= search_field_tag :search, params[:search], :placeholder => "Buscar", :results => 5 %>
 <% end %>
 </div>
 <div id="keys">
@@ -12,5 +12,5 @@
 	<% end %>
 	</table>
 	<br><br>
-	<%= will_paginate @key %>
+	<%= will_paginate @keys %>
 </div>

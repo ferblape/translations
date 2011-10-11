@@ -19,3 +19,8 @@
 	</ul>
 </div>
 
+<div id="page">
+	<%= link_to "Anterior", key_translations_path(@translation.previous) if @translation.previous %>
+	<%= link_to "Siguiente", key_translations_path(@translation.next) if @translation.next %>
+</div>
+

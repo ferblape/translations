@@ -26,6 +26,15 @@ class Translation < ActiveRecord::Base
       save
     end
   end
+  
+  def next
+    Key.where("id < #{self.key_id}").order('id DESC').first
+  end
+  
+  def previous
+    Key.where("id > #{self.key_id}").order('id ASC').first
+  end
+
 
   private
   def create_or_update_vote

@@ -15,4 +15,12 @@ class Key < ActiveRecord::Base
       t.translation
     end
   end
+  
+  def export
+    # send_file (generated)
+    # 
+  
+  end
+  
+  
 end
