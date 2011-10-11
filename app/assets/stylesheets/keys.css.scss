@@ -1,8 +1,16 @@
 #search{
 	float:right;
+	display: block;
 }
 #keys{
 	table{
-		width:100%;
+		margin-top: 50px;
+
+	}
+	a{
+		padding:5px;
+	}
+	a:hover{
+		background-color: #EFF3FB;
 	}
 }
