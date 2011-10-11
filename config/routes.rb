@@ -1,4 +1,7 @@
 Translations::Application.routes.draw do
+  
+  root :to => redirect('/login')
+
   resources :keys do
     resources :translations
   end
