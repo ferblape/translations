@@ -11,7 +11,10 @@ class Translation < ActiveRecord::Base
   
   after_create :create_or_update_vote
  
- 
+  def translation=(value)
+    write_attribute(:translation, value.strip)
+  end
+  
   def save_if_not_exist
     if t = Translation.where(:translation => translation).first
       if vote = t.key.votes.where(:user_id => user_id).first
