@@ -1,11 +1,11 @@
 <div id="keys">
 	<table border="0" cellspacing="5" cellpadding="5">
-	<% @translations.each do |t| %>
+	<% @keys.each do |k| %>
 		<tr>
-			<td><%= link_to t.key.english, key_translations_path(t.key.id) %></td><td><%= t.key.most_voted(current_user.language) %></td>
+			<td><%= link_to k.english, key_translations_path(k) %></td><td><%= k.most_voted(current_user.language) %></td>
 		</tr>
 	<% end %>
 	</table>
 	<br><br>
-	<%= will_paginate @translations %>
+	<%= will_paginate @key %>
 </div>

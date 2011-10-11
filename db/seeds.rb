@@ -14,3 +14,4 @@ key3.translations.create(:language => 'en', :user => user2, :translation => 'Goo
 key3.translations.create(:language => 'en', :user => user2, :translation => 'Good bye')
 
 key3.translations.create(:language => 'en', :user => user1, :translation => 'Good bye')
+
