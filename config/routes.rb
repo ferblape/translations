@@ -3,6 +3,9 @@ Translations::Application.routes.draw do
   root :to => redirect('/login')
   
   resources :users
+ 
+  get "search" => "keys#index", :as => :search
+  
   resources :keys do
     resources :translations
   end
