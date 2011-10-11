@@ -51,6 +51,23 @@ cursor: pointer;
 -moz-border-radius: 5px;
 border-radius: 5px;
 }
+
 .button:hover{
 background-color: #DDD;
 }
+
+.flash{
+	background-color:#656565;
+	border: 1px solid #999;
+	position:absolute;
+	top:0px;
+    opacity:0.8;
+	left: 40%;
+	padding:10px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	
+}
+

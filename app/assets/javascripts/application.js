@@ -8,7 +8,7 @@
 //= require jquery_ujs
 //= require_tree .
 $(document).ready(function(){
-	$(':not(.alert)').click(function() { 
-	      $('.alert').slideUp();
+	$(':not(.flash)').click(function() { 
+	      $('.flash').slideUp();
 	});
 });
