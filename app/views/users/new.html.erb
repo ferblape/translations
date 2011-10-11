@@ -1,0 +1,20 @@
+<%=form_for @user do |f| %>
+
+	<%= f.label :email, "Email: "%>
+	<%= f.text_field :email %>
+	
+	<%= f.label :username, "Nombre de usuario: "%>
+	<%= f.text_field :username %>
+	
+	<%= f.label :password, "Contraseña: "%>
+	<%= f.password_field :password %>
+	
+	<%= f.label :password_confirmation, "Confirme contraseña: "%>
+	<%= f.password_field :password_confirmation %>
+	
+	<%= f.label :language, "Idioma: "%>
+	<%= f.select :language, [["Spanish","es"],["English","en"]] %>
+
+	<%= f.submit "Crear" %>
+<% end %>
+	
