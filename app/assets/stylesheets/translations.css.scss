@@ -2,3 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.reference_translation{
+	font: 150% Verdana, sans-serif;
+	display: block;
+}
+
+#other_translations{
+	padding:20px;
+	border-top: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+	
+}
+
+.whole-translation{
+	display:block;
+	cursor: pointer;
+	padding:5px;
+}
+
+.whole-translation:hover{
+	background-color: #EFF3FB;
+}
+
+.button{
+background-color:#B5F5FF;
+height:30px;
+margin-left:2px;
+text-decoration:none;
+font-weight: bold;
+width:170px;
+border: 1px solid #DDD;
+cursor: pointer;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+
+.button:hover{
+background-color: #DDD;
+}
+
+#page{
+	float:right;
+	a:hover{
+		border-bottom: 2px solid #36C;
+	}
+}
+#translation_translation{
+	font-size: 120%;
+	border-color: #DDD;
+}

@@ -1,3 +1,4 @@
+<div id="login-form">
 <%= form_tag create_session_path do %>
 	<%=label_tag :identifier, "Email: " %>
 	<%= text_field_tag :identifier, params[:identifier], :placeholder => "usuario@thetoldo.com" %>
@@ -5,5 +6,8 @@
 	<%= password_field_tag :password %>
 	<%= submit_tag "Ingresar" %>
 <% end %>
+<br><br>
+
+<%= link_to "Registrar", new_user_path %>
+</div>
 	
-	<%= link_to "Nuevo Usuario", new_user_path %>

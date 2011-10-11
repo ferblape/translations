@@ -1,0 +1,18 @@
+
+<header>
+<div id="logo">
+	<%= link_to image_tag("logo-toldo.png", :height => "100%"), keys_path%>
+</div>
+<span id="textlogo"><%= link_to "Translate", keys_path%></span>
+
+<div id="login">
+<% if controller_name != "sessions" %>	
+	<% if session[:user_id] %>
+		<%= current_user.email %> <span id="logout"><%= link_to "logout", logout_path %></span>
+	<% else %>
+		<%= link_to "login", login_path %>
+	<% end %>
+<% end %>
+</div>
+
+</header>

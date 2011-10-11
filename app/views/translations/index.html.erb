@@ -1,26 +1,25 @@
+
+
+<div id="page">
+	<%= link_to "< Anterior", key_translations_path(@translation.previous) if @translation.previous %>
+	<% if @translation.previous && @translation.next %> <span style="color:#999;">|</span> <% end %>
+	<%= link_to "Siguiente >", key_translations_path(@translation.next) if @translation.next %>
+</div>
+
 <div id="translation">
 	English phrase: <spam class="reference_translation"><%= @reference_translation.translation %></spam>
-</div>
-<div id="return">
-	<%= link_to "Volver", keys_path%>
 </div>
 <br>
 
 <div id="edit_translation">
 	<%= render 'form' %>
 </div>
-
-
+<br><br>
+Other translations:<br><br>
 <div id="other_translations">
-	<ul>
-	<% @translations.each do |t| %>
-		<li class="translated_list"><span><%= t.translation %></span> (<%= t.votes_count %>)</li>
-	<% end %>
-	</ul>
-</div>
 
-<div id="page">
-	<%= link_to "Anterior", key_translations_path(@translation.previous) if @translation.previous %>
-	<%= link_to "Siguiente", key_translations_path(@translation.next) if @translation.next %>
+	<% @translations.each do |t| %>
+		<span class="whole-translation"><span><%= t.translation %></span> (<%= t.votes_count %>)</span>
+	<% end %>
 </div>
 

@@ -6,54 +6,25 @@
  *= require_tree . 
 */
 
-.reference_translation{
-	font: 150% Verdana, sans-serif;
-	display: block;
+
+body{
+ 	margin:0px;
+	color:#222;
+	font-family:arial,sans-serif;
+}
+
+a{
+	color: #36C;
+	text-decoration: none;
 }
 
 #container{
-	background-color: ghostWhite;
-	border: 1px solid #DDD;
+	
 	padding: 20px;
 	width: 660px;
 	height: 100%;
 	margin: 0 auto;  
-}
-
-#other_translations ul{
-	list-style: none;
-	padding-left:2px;
-}
-
-#other_translations li{
-	width: 300px;
-	cursor:pointer;
-	margin: 5px;
-	padding: 3px;
-	border: 1px solid ghostWhite;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-}
-
-#other_translations li:hover{
-	background-color:#93D1CE;
-	border: 1px solid #999;
-}
-
-.button{
-background-color:#75E6FF;
-height:30px;
-margin-left:2px;
-text-decoration:none;
-width:170px;
-border: 1px solid #999;
-cursor: pointer;
--moz-border-radius: 5px;
-border-radius: 5px;
-}
-
-.button:hover{
-background-color: #DDD;
+	margin-top:50px;
 }
 
 .flash{
@@ -73,8 +44,5 @@ background-color: #DDD;
 
 label{
 	display:block;
-}
-
-#search{
-	float: right;
+	padding: 10px 0px;
 }

@@ -1,0 +1,39 @@
+header{
+	background-color:white;
+	position:fixed;
+	top:0px;
+	width:100%;
+	border-bottom: 1px solid #DDD;
+	height:40px;
+	padding: 5px 0px;
+	box-shadow: 0 0 10px #DDD;  
+	-moz-box-shadow: 0 0 10px #DDD;  
+
+	
+	#logo{
+		float: left;
+		margin: 0px 0px 0px 0px;
+	}
+	
+	#textlogo{
+		color: #575757;
+		font-size: 200%;
+		margin-top:50px;
+		font-family: 'Andada', serif;
+		a{
+			color: #575757;
+		}
+	}
+	
+	#login{
+		padding:12px;	
+		float: right;
+		a{
+			padding:5px;
+		}
+		a:hover{
+			background-color: #EFF3FB;
+		}
+	}
+	
+}
