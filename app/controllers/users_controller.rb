@@ -7,11 +7,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user]) 
     if @user.save
-      flash[:notice] = "Usuario creado"
+      flash[:notice] = "New user added"
       session[:user_id] = @user.id
       redirect_to keys_path
     else
-      flash[:alert] = "Error al crear el usuario"
+      flash[:alert] = "Please check the fields"
       render :new
     end
   end

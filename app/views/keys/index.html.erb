@@ -1,16 +1,8 @@
 <div id="search">
-<%= form_tag search_path, :method => 'get' do %>
+<%= form_tag search_path, :method => 'get', :remote => true do %>
 	<%= search_field_tag :search, params[:search], :placeholder => "Search", :results => 5 %>
 <% end %>
 </div>
 <div id="keys">
-	<table border="0" cellspacing="5" cellpadding="5">
-	<% @keys.each do |k| %>
-		<tr>
-			<td><%= link_to k.english, key_translations_path(k) %></td><td>(<%= k.most_voted(current_user.language) %>)</td>
-		</tr>
-	<% end %>
-	</table>
-	<br><br>
-	<%= will_paginate @keys %>
+	<%= render 'list' %>
 </div>

@@ -4,7 +4,7 @@ Translations::Application.routes.draw do
   
   resources :users
  
-  get "search" => "keys#index", :as => :search
+  get "search" => "keys#search", :as => :search
   
   resources :keys do
     resources :translations
