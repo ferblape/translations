@@ -28,17 +28,21 @@ a{
 }
 
 .flash{
-	background-color:#656565;
-	border: 1px solid #999;
+	box-shadow: 0 0 10px #DDD;  
+	-moz-box-shadow: 0 0 10px #DDD;
+	color: #000;
+	font-weight: bold;
+	z-index: 10;
+	background-color:#DCDCDC;
 	position:absolute;
 	top:0px;
     opacity:0.8;
 	left: 40%;
 	padding:10px;
-	-moz-border-radius-bottomright: 5px;
-	-moz-border-radius-bottomleft: 5px;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 2px;
+	-moz-border-radius-bottomleft: 2px;
+	border-bottom-right-radius: 2px;
+	border-bottom-left-radius: 2px;
 	
 }
 
