@@ -3,18 +3,18 @@
 	<%= f.label :email, "Email: "%>
 	<%= f.text_field :email %>
 	
-	<%= f.label :username, "Nombre de usuario: "%>
+	<%= f.label :username, "Username: "%>
 	<%= f.text_field :username %>
 	
-	<%= f.label :password, "Contraseña: "%>
+	<%= f.label :password, "Password: "%>
 	<%= f.password_field :password %>
 	
-	<%= f.label :password_confirmation, "Confirme contraseña: "%>
+	<%= f.label :password_confirmation, "Confirm password: "%>
 	<%= f.password_field :password_confirmation %>
 	
-	<%= f.label :language, "Idioma: "%>
+	<%= f.label :language, "Language: "%>
 	<%= f.select :language, [["Spanish","es"],["English","en"]] %>
 <br><br>
-	<%= f.submit "Crear" %>
+	<%= f.submit "Sign Up" %>
 <% end %>
 	

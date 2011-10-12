@@ -8,7 +8,7 @@
 <div id="login">
 <% if controller_name != "sessions" %>	
 	<% if session[:user_id] %>
-		<%= current_user.email %> <span id="logout"><%= link_to "logout", logout_path %></span>
+		<%= current_user.email %> <span id="logout"><%= link_to "Logout", logout_path %></span>
 	<% else %>
 		<%= link_to "login", login_path %>
 	<% end %>

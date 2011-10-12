@@ -9,11 +9,11 @@
 //= require_tree .
 $(document).ready(function(){
 
-	$(':not(.flash)').click(function() { 
-	      $('.flash').animate({ 
-		        top: "-=50px"
-		      });
-	});
+	// $(':not(.flash)').click(function() { 
+	//       $('.flash').animate({ 
+	// 	        top: "-=50px"
+	// 	      });
+	// });
 	
 	$('.flash').delay(4000).animate({ 
 	        top: "-=50px"

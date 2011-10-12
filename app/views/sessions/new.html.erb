@@ -2,12 +2,12 @@
 <%= form_tag create_session_path do %>
 	<%=label_tag :identifier, "Email: " %>
 	<%= text_field_tag :identifier, params[:identifier], :placeholder => "usuario@thetoldo.com" %>
-	<%= label_tag :password, "Contraseña: "%>
+	<%= label_tag :password, "Password: "%>
 	<%= password_field_tag :password %>
-	<%= submit_tag "Ingresar" %>
+	<%= submit_tag "Login" %>
 <% end %>
 <br><br>
 
-<%= link_to "Registrar", new_user_path %>
+<%= link_to "Sign up", new_user_path %>
 </div>
 	

@@ -1,9 +1,9 @@
 
 
 <div id="page">
-	<%= link_to "< Anterior", key_translations_path(@translation.previous) if @translation.previous %>
+	<%= link_to "< Previous", key_translations_path(@translation.previous) if @translation.previous %>
 	<% if @translation.previous && @translation.next %> <span style="color:#999;">|</span> <% end %>
-	<%= link_to "Siguiente >", key_translations_path(@translation.next) if @translation.next %>
+	<%= link_to "Next >", key_translations_path(@translation.next) if @translation.next %>
 </div>
 
 <div id="translation">
