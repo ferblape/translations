@@ -4,6 +4,7 @@ gem 'rails', '3.1.1'
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'will_paginate'
+gem 'bcrypt-ruby'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
