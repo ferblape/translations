@@ -12,7 +12,7 @@ class TranslationsController < ApplicationController
     @translation = @key.translations.new(:user => current_user)
   end
 
-  def create    
+  def create
     @translation = @key.translations.new(params[:translation])
     @translation.user = current_user
     @translation.language = current_user.language
@@ -25,23 +25,23 @@ class TranslationsController < ApplicationController
     end
   end
 
-  def edit   
+  def edit
   end
 
   def update
   end
-  
+
   protected
     def load_key
       unless @key = Key.find(params[:key_id])
         render_404 and return false
       end
     end
-    
+
     def load_reference_translation
-      unless @reference_translation = @key.translations.where("language = 'en'").first
+      unless @reference_translation = @key.translations.where(:language => Rails.configuration.main_locale).first
         render_404 and return false
       end
     end
-    
+
 end

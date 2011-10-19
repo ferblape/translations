@@ -1,0 +1,6 @@
+development:
+  main_locale: :en
+test:
+  main_locale: :en
+production:
+  main_locale: :en

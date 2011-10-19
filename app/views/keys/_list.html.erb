@@ -1,8 +1,8 @@
 <table border="0" cellspacing="5" cellpadding="5">
 <% @keys.each do |k| %>
-	<tr>
-		<td><%= link_to k.english, key_translations_path(k) %></td><td>(<%= k.most_voted(current_user.language) %>)</td>
-	</tr>
+  <tr>
+    <td><%= link_to k.main_locale, key_translations_path(k) %></td><td>(<%= k.most_voted(current_user.language) %>)</td>
+  </tr>
 <% end %>
 </table>
 <br><br>
