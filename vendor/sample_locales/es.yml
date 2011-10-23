@@ -1,0 +1,483 @@
+es:
+  time:
+    formats:
+      order: "%e %b %Y"
+  date:
+    formats:
+      next_payment_date: "%e de %B"
+      next_payment_date_year: "%e de %B de %Y"
+  activerecord:
+    errors:
+      models:
+        items:
+          attributes:
+            parent:
+              nil: "Tienes que seleccionar un producto"
+            product:
+              stock: "No queda stock del producto"
+            amount:
+              positive: "No puede ser menor de 1"
+        product:
+          attributes:
+            images:
+              empty: "Tienes que asociar al menos una imagen a tu producto"
+        image:
+          attributes:
+            element:
+              unique: "Ya existe una imagen asociada a este elemento"
+              too_many: "Un producto sólo puede tener 6 fotos"
+        section:
+          attributes:
+            url:
+              blank: "No puedes dejar la URL en blanco"
+              invalid: "La URL es inválida"
+            content:
+              empty: "No puedes dejar vacíos todos los campos de contacto"
+            status:
+              invalid: "Como mínimo una de las secciones tiene que ser pública"
+        shop:
+          attributes:
+            old_password:
+              invalid: "no es correcta"
+            name:
+              blank: "no puede estar en blanco"
+            subdomain:
+              blank: "no puede estar en blanco"
+              uniqueness: "ya está en uso"
+            email:
+              blank: "no puede estar en blanco"
+              uniqueness: "ya está en uso"
+            password:
+              blank: "no puede estar en blanco"
+              confirmation: "no coincide"
+            password_confirmation:
+              blank: "no puede estar en blanco"
+    models:
+      category: Categoría
+      extra: Extra
+      model: Modelo
+      product: "Producto"
+      shop: Tienda
+      section: Sección
+    attributes:
+      section:
+        url: "URL"
+        content: "Contenido"
+      extra:
+        photo: "Foto"
+        description: "Descripción"
+        additional_cost: "Coste adicional"
+      product:
+        name: "Nombre del producto"
+        description: "Descripción"
+        reference: "Referencia"
+        available_units: "Unidades disponibles"
+        unlimited: "ilimitadas"
+        price: "Precio"
+        state: "Estado"
+        price_on_sale: "Precio en oferta"
+        categories_ids: "Categorías"
+      category:
+        name: "El nombre de la categoría"
+      shop:
+        custom_domain: "Tu dominio"
+        name: "Nombre de la tienda"
+        email: "E-mail"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+        subdomain: "Subdominio"
+        account_language: "Idioma"
+        language: "Idioma de la tienda"
+        currency: "Moneda de la tienda"
+        state: "Estado de la tienda"
+      model:
+        photo: "Foto"
+        available_units: "Unidades"
+        additional_cost: "Coste extra"
+      order:
+        reference: "Referencia"
+        image: "Foto"
+        item_name: "Producto"
+        item_amount: "Cantidad"
+        amount: "Cantidad"
+        item_price: "Precio"
+        subtotal: "Subtotal"
+  done: "Hecho"
+  save_changes: "Guardar cambios"
+  save: "Guardar"
+  cancel: "Cancelar"
+  back: "Volver"
+  sure: "¿Estás seguro?"
+  layouts:
+    admin:
+      logout: "Salir"
+      products: "Productos"
+      orders: "Pedidos"
+      order: "Pedido"
+      options: "Opciones"
+      view_shop: "Ver tienda"
+      settings: "Ajustes"
+  admin:
+    orders:
+      controller:
+        state_update_successfully: "El estado del pedido se ha actualizado correctamente"
+        errors_updating_state: "Ha habido un error al actualizar el estado del pedido"
+      index:
+        orders_zero: "Cuando haya pedidos, podrás consultarlos aquí :)"
+        view_order: "Ver pedido %{identifier}"
+        new_state: "Nuevo"
+        sent_state: "Enviado"
+        orders: "Pedidos"
+        all_states: "en todos los estados"
+        paid: "nuevos"
+        sent: "enviados"
+        rejected: "rechazados"
+      show:
+        order: "Pedido"
+        state: "Estado"
+        payment_method: "a través de Paypal"
+      states:
+        paid: "Nuevo"
+        sent: "Enviado"
+        rejected: "Rechazado"
+    products:
+      views:
+        drop_images_here: "arrastra aquí tus fotos"
+        products: "Productos"
+        add: "Añadir producto"
+        edit: "Editar producto"
+        models: "Versiones"
+        add_versions: "Añadir versiones"
+        remove_category: "Quitar categoría"
+        add_category: "Añadir categoría"
+        extras: "Extras"
+        add_extras: "Añadir extras"
+        add_extra: "Añadir extra"
+        add_version: "Añadir versión"
+        price_in_currency: "Precio en %{currency}"
+        basic_data: "Datos básicos"
+        price_and_state: "Precio y estado"
+        select_category: "Selecciona una categoría"
+        images: "Fotos"
+        select_files: "O selecciona archivos..."
+      controller:
+        product_created_successfully: "Producto creado correctamente"
+        product_error_on_creation: "No se ha podido crear el producto"
+        product_updated_successfully: "Producto actualizado correctamente"
+        product_error_on_update: "No se ha podido actualizar el producto"
+        products_updated_successfully: "Productos actualizados correctamente"
+        products_error_on_update: "No se han podido actualizar los productos"
+        product_removed_successfully: "Producto eliminado correctamente"
+        products_removed_successfully: "Productos eliminados correctamente"
+        errors_removing_products: "Ha habido un problema al eliminar los products"
+        product_not_found: "Producto no encontrado"
+      index:
+        no_products: "Aún no tienes ningún producto, añade uno desde aquí"
+        products: "Productos"
+        from_every_category: "de todas las categorías"
+        options: "Opciones"
+        change_state: "Cambiar de Estado"
+        choose_state: "Elige un estado"
+        remove: "Borrar"
+        add_product: "Añadir producto"
+        unlimited: "ilimitadas"
+        edit: "editar"
+        add_category: "Añadir a categoría"
+        and_n_more: "y %n% más"
+        products: "Productos"
+        from_every_category: "de todas las categorías"
+        from_category: "de la categoría %{category}"
+        actions: "Acciones"
+    categories:
+      edit:
+        all_categories: "Todas las categorías"
+        edit: "editar categorías"
+        new_category: "Nueva categoría..."
+        add: "Añadir categoría"
+        finished: "Dejar como estaba"
+        edit: "editar"
+        save: "Guardar"
+        remove_category: "Borrar categoría"
+        reorder: "Arrastrar para reordenar"
+      new:
+        done: "Hecho"
+        cancel: "Cancelar"
+  categories:
+    views:
+      new_category: "Nueva categoría..."
+    controller:
+      product_created_successfully: "Producto creado correctamente"
+      product_error_on_creation: "No se ha podido crear el producto"
+  pagination:
+    previous_page: "Anterior"
+    next_page: "Siguiente"
+    offset: "%{current} de %{total}"
+  orders:
+    return_to_shop: "Volver a %{name}"
+  products:
+    states:
+      not_published: "No publicado"
+      published: "Publicado"
+      published_on_sale: "En oferta"
+      published_coming_soon: "Próximamente"
+  password_resets:
+    create:
+      notice: "E-mail enviado correctamente"
+      alert: "No hemos encontrado ninguna tienda con ese e-mail"
+    update:
+      notice: "Contraseña reseteada correctamente"
+      alert: "El código para resetear la contraseña ha expirado. Por favor, solicita uno nuevo"
+    new:
+      reset_your_password: "Solicita una nueva contraseña"
+      submit: "Recordar contraseña"
+    edit:
+      new_password: "Introduce tu nueva contraseña"
+      errors: "Errores"
+      submit: "Actualizar contraseña"
+  sessions:
+    new:
+      forgot_password: "¿Olvidaste tu contraseña?"
+      remember_me: "Recordarme"
+    controller:
+      login_required: "Debes de iniciar sesión para ver esta sección"
+      bad_new_session: "E-mail o contraseña inválidos"
+      logout_successful: "Sesión finalizada correctamente"
+    views:
+      login_button: "Entrar"
+  site:
+    tools: "Herramientas"
+    back_to_toldo: "Volver a Toldo >"
+    home:
+      create_your_shop: "Crear mi tienda"
+      login: "Entra"
+  shops:
+    states:
+      draft: "Borrador"
+      published: "Pública"
+    payment:
+      error_removing_profile: "No se ha podido actualizar tu perfil. Por favor, vuelve a intentarlo. Si ves que el problema persiste, ponte en contacto con nosotros"
+      success: "Tu pago se ha efectuado correctamente. Gracias por utilizar Toldo"
+      rejected: "El pago por Toldo no ha sido efectuado correctamente. Tu tienda sigue pendiente de pagar por el servicio"
+      profile_id_failure: "El pago por Toldo no ha sido efectuado correctamente. Tu tienda sigue pendiente de pagar por el servicio. Por favor, ponte en contacto con nosotros si tienes algún problema"
+      remove_recurring_payment_success: "La suscripción ha sido cancelada correctamente. Ya no recibirás más cargos en tu cuenta. Tu tienda permanecerá activa hasta el final del periodo"
+    settings:
+      i_have_my_own_domain: "tengo mi propio dominio"
+      choose_subdomain: "Elige la dirección de tu tienda"
+      shop: "Ajustes de la tienda"
+      account: "Datos personales"
+      suscription: "Tu suscripción a Toldo"
+    form:
+      payment_pre_accepted: "Tu pago ha sido recibido y está pendiente de ser confirmado"
+      next_payment_date: "El próximo pago será el %{date}"
+      paypal_id: "Tu e-mail de Paypal"
+      name: "Nombre de la tienda"
+      subdomain: "Elige la dirección de tu tienda"
+      email: "Email"
+      password: "Crea una contraseña"
+      new_password: "Crea una nueva contraseña"
+      password_confirmation: "Confirma la contraseña"
+      old_password: "Tu antigua contraseña"
+      my_own_domain: "Tengo mi propio dominio"
+      account_language: "Idioma"
+      change_password: "Cambiar contraseña"
+      cancel_change_password: "Cancelar"
+      monthly: "Mensual (%{amount}%{currency_symbol} / mes)"
+      annual: "Anual (%{amount}%{currency_symbol} / año)"
+      next_payment: "El próximo pago será el %{date}"
+      pay: "Pagar"
+      cancel_suscription: "Cancelar la suscripción"
+      update_suscription: "Actualizar la suscripción"
+      save: "¡Ahorra %{amount}%{currency_symbol}!"
+    controller:
+      already_paying_month: "Ya estás pagando por tu tienda de Toldo. Si quieres pagar un año de golpe selecciona la opción 'Anual'"
+      already_paying_year: "Ya estás pagando por tu tienda de Toldo. Si quieres pagar mes a mes selecciona la opción 'Mensual'"
+      shop_created_successfully: "Tu tienda ha sido creada correctamente. Te hemos enviado un e-mail para que confirmes la cuenta."
+      shop_updated_successfully: "Los cambios se han guardado correctamente"
+      errors_updating_shop: "No se han podido guardar los cambios"
+      bad_payment_type: "El tipo de pago que has elegido es inválido"
+  locales:
+    name:
+      es: "Español (España)"
+      en: "Inglés (Estados Unidos)"
+      cl: "Español (Chile)"
+  email_confirmation:
+    controller:
+      success: "Tu cuenta ha sido confirmada correctamente"
+      error: "Tu cuenta no ha podido ser confirmada"
+  sections:
+    contact:
+      contact: "Contacta"
+      contact_us: "Ponte en contacto con nosotros"
+      name: "Nombre"
+      email: "E-mail"
+      send: "Enviar"
+      phone: "Teléfono"
+    edit: "Editar"
+    add: "+ Añadir nueva sección"
+    published: "Pública"
+    private: "Privada"
+    include_map: "Incluir un mapa?"
+    email: "Dirección a la que llegarán los e-mails de contacto"
+    phone: "Teléfono"
+    address: "Dirección"
+    search_address: "Buscar"
+    default:
+      home: "Inicio"
+      contact: "Contacto"
+    types: "Tipo de sección"
+    type:
+      products: "Productos"
+      page: "Página"
+      link: "Enlace"
+  tools:
+    tools: "Herramientas"
+    dessign: "Diseño"
+    sections: "Secciones"
+  images:
+    delete: "Borrar"
+  cart:
+    delete: "Borrar"
+    delete_product: "Borrar producto"
+    check_your_order: "Revisa tu pedido"
+    back_to_shop: "Volver a %{name}"
+    cart: "Cesta"
+    add: "Añadir a la cesta"
+    submit_order: "Siguiente: realizar pago"
+  customers_mailer:
+    contact:
+      subject: "%{shop_name} - Has recibido un mensaje de %{name}"
+      text:
+        p1: "Hola!"
+        p2: "Desde el formulario de contacto de tu tienda %{shop_name} has recibido el siguiente mensaje de contacto de %{name} (%{email})"
+        p3: "Si quieres contestar basta con que le des a responder este e-mail."
+        p4: "Un saludo"
+        p5: "Toldo"
+  messages:
+    create:
+      notice: "El mensaje ha sido enviado correctamente"
+      alert: "El mensaje no se ha podido enviar porque contiene errores: %{errors}"
+      blank_message: "el mensaje no puede estar en blanco"
+      blank_name: "tu nombre no puede estar en blanco"
+      blank_email: "tienes que indicar tu dirección de e-mail"
+      invalid_email: "la dirección de correo no es válida"
+  shop_mailer:
+    recurring_payment_rejected:
+      subject: "Problema de pago %{name}"
+      text:
+        p1: "Hola %{name},"
+        p2: "Parece que ha habido un problema con tu pago en Paypal, por lo que no hemos podido actualizar la suscripción de tu tienda."
+        p3: "No te preocupes, como estos problemas son frecuentes, Paypal hará un reintento de cobro en 5 días, y hasta ese momento, dejaremos tu tienda abierta al público, así tienes tiempo de solucionar lo que haya pasado."
+        p4: "Ya sabes que puedes contactar conmigo si tienes alguna duda, comentario o sugerencia al respecto."
+        p5: "Un saludo,"
+    recurring_payment_error_1_notification:
+      subject: "Reintento de cobro para %{name}"
+      text:
+        p1: "Hola %{name},"
+        p2: "Parece que no has podido solucionar los problemas con tu cuenta de Paypal y ha sido imposible actualizar tu suscripción a Toldo."
+        p3: "Si quieres mantener abierta tu tienda, sólo tienes que revisar tu cuenta de Paypal y solucionar lo que haya ocurrido. Volveremos a pasar el cobro automáticamente dentro de 5 días, y dejaremos la tienda abierta hasta ese momento."
+        p4: "Es posible que tu tarjeta haya caducado o que se haya quedado sin dinero suficiente para afrontar el pago."
+        p5: "Si quieres cerrar la tienda por un tiempo, puedes ponerla en modo \"borrador\" y cancelar tu suscripción desde los ajustes. Cuando quieras abrir de nuevo, sólo tienes que reactivarlo. Si lo que quieres es cerrar tu tienda para siempre, escríbenos un email solicitando la baja y aunque nos dará mucha pena, cancelaremos tu cuenta inmediatamente."
+        p6: "No dudes en contactar conmigo si te surge alguna pregunta o comentario."
+        p7: "Un saludo,"
+    recurring_payment_error_2_notification:
+      subject: "Segundo reintento de cobro para %{name}"
+      text:
+        p1: "Hola %{name},"
+        p2: "De nuevo nos vemos en la misma situación que hace 5 días, nos ha sido imposible reanudar tu suscripción a Toldo."
+        p3: "Desde este momento, tu tienda aparecerá cerrada al público, aunque sigues teniendo el acceso a los ajustes y a la cuenta de Toldo por si lo necesitas."
+        p4: "Como en anteriores ocasiones, se realizará el último recobro automático dentro de 5 días, así, si en ese tiempo has podido solucionar los problemas en tu cuenta, la tienda se abrirá automáticamente."
+        p5: "Si por el contrario, no ha sido posible, dejaremos en tus manos la reactivación."
+        p6: "Ya sabes que puedes contactar conmigo si te surge alguna pregunta o comentario."
+        p7: "Un saludo,"
+    recurring_payment_error_3_notification:
+      subject: "Cancelada la suscripción en Toldo"
+      text:
+        p1: "Hola %{name},"
+        p2: "El último intento de cobro automático también nos ha dado problemas, por lo que tu tienda permanecerá cerrada al público hasta que actualices tu cuenta de paypal."
+        p3: "Una vez esté actualizada, tendrás que volver a ajustes y volver a activar tu suscripción a Toldo."
+        p4: "Sigues teniendo acceso a los ajustes de tu tienda, por si quieres aprovechar para hacer cambios de diseño o de stock."
+        p5: "Si lo que quieres es cerrar tu tienda para siempre, escríbenos un email solicitando la baja y aunque nos dará mucha pena, cancelaremos tu cuenta inmediatamente."
+        p6: "Un saludo,"
+    order_sent:
+      subject: "Tu pedido en %{name} está en camino"
+      text:
+        p1: "¡Hola!"
+        p2: "El pedido que hiciste en %{name} ya está en camino."
+        p3: "Un saludo,"
+    orders:
+      reference: "Referencia"
+      total: "Total"
+      amount: "Cantidad"
+      subtotal: "Subtotal"
+    first_order:
+      subject: "Primera venta en tu tienda - %{identifier}"
+      text:
+        p1: "¡Hola!"
+        p2: "Acabas de recibir tu primer pedido, ¡esto marcha!"
+        p3: "Esto es lo que has vendido:"
+        p4: "Puedes ver los detalles de la compra en la sección de pedidos de tu tienda, y ponerte manos a la obra con el envío:"
+        p5: "No te olvides de marcarlo como enviado cuando hayas terminado, así mantienes actualizado el stock."
+        p6: "También es recomendable mirar en tu cuenta Paypal para ver si te ha llegado correctamente el pago."
+        p7: "Como siempre, si tienes alguna duda, puedes consultar nuestro blog de ayuda o escribirme con lo que necesites saber:"
+        p8: "No te entretengo más, que estarás deseando enviar ese pedido."
+        p9: "Un saludo,"
+    new_order:
+      subject: "Tienes un nuevo pedido en tu tienda - %{identifier}"
+      text:
+        p1: "¡Hola!"
+        p2: "¡Alguien ha comprado en %{name}!"
+        p3: "Esto es lo que has vendido:"
+        p4: "Consulta tus pedidos para saber un poco más y empezar con el envío:"
+        p5: "Ya sabes que tienes que marcarlo como enviado cuando termines para que se actualice el stock y revisar tu cuenta de paypal."
+        p6: "¡Muchas gracias por vender con nosotros!"
+        p7: "Un saludo,"
+    notification_no_products:
+      subject: "Tu tienda está vacía"
+      text:
+        p1: "¡Hola!"
+        p2: "Hace unos días creaste una tienda en Toldo y veo que está vacía, es posible que necesites más tiempo, pero lo mismo has tenido algún problema a la hora de añadir los productos o ha ocurrido un error fatal y no nos hemos enterado."
+        p3: "Si necesitas algo de ayuda no tienes más que decírmelo, para eso estamos."
+        p4: "Un saludo,"
+    welcome:
+      subject: "¡%{name} ya tiene Toldo!"
+      text:
+        p1: "¡Hola!"
+        p2: "Soy Amalia, trabajo en Toldo y voy a ayudarte en lo que pueda mientras estés con nosotros."
+        p3: "Lo primero es darte la bienvenida, pero también aprovecho para explicarte algunas cosas:"
+        p4: "¿Qué pasa ahora? "
+        p5: "Ya has terminado con el proceso de registro, ahora puedes empezar a poner bonita tu tienda:"
+        p6: "Y a añadir tus productos para abrir las puertas cuanto antes:"
+        p7: "Otra cosa, hoy empezamos con el periodo de prueba: ¿cómo va esto? desde este momento, estás poniéndonos a prueba, utilizando de manera gratuita la web para ver cómo funciona, si te gusta y si quieres seguir con nosotros."
+        p8: "Así que de momento no tienes que pagar nada, cuando termine el plazo de prueba, el precio fijo será de %{amount_and_currency} al mes, ni más ni menos. "
+        p9: "Si necesitas ayuda o inspiración para empezar, puedes mirar nuestro blog (http://thetoldo.tumblr.com) o hacerme llegar tus dudas y comentarios."
+        p10: "¡Gracias por apuntarte a Toldo!"
+    email_confirmation:
+      subject: "Confirma tu cuenta en Toldo"
+      p1: "¡Hola!"
+      p2: "Muchas gracias por contar con nosotros para abrir tu tienda en internet."
+      p3: "Ahora, sólo queda un paso para que tu tienda esté creada, es el paso de confirmación, y es tan sencillo como seguir este enlace:"
+      p4: "También puedes copiarlo y pegarlo en tu navegador."
+      p5: "¡Nos vemos en Toldo!"
+      p6: "Un saludo,"
+      disclaimer: "Si no has sido tú el que se ha registrado con nosotros, puedes ignorar este email o borrarlo."
+    password_reset:
+      p1: "Para introducir una nueva contraseña pincha en el siguiente enlace:"
+      p2: "Si tú no has solicitado una nueva contraseña, simplemente ignora este e-mail y tu contraseña seguirá siendo la misma"
+      subject: "Obtén una nueva contraseña"
+  toldo:
+    suscription: "Mi tienda en Toldo"
+  models:
+    views:
+      delete: "Borrar versión"
+      unlimited: "ilimitadas"
+      add_field: "Añadir característica"
+  extras:
+    views:
+      delete: "Borrar extra"
+  shop:
+    add_to_cart: "Añadir al carrito"
+    search: "Busca en %{name}"
+    choose_a_model: "Elige un modelo"
+    my_order: "Mi pedido"
+    orders:
+      total: "Total"
