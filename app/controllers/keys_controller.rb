@@ -17,4 +17,12 @@ class KeysController < ApplicationController
   
   end
   
+  def export
+    
+    export = File.open("tmp/#{current_user.language}.yml",'w+')
+    export.write(Key.export(current_user.language))
+    export.close
+    send_file "tmp/#{current_user.language}.yml", :type => 'text/yaml'
+  end
+  
 end
