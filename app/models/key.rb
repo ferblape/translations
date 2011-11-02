@@ -5,13 +5,14 @@ class Key < ActiveRecord::Base
 
   validates :key, :uniqueness => true, :presence => true
 
+  
   def main_locale
     t = translations.where(:language => Rails.configuration.main_locale).first
     t.translation
   end
 
   def short_main_locale
-    main_locale.truncate(40)
+    main_locale.truncate(40) if main_locale
   end
   
   def most_voted(language)
@@ -21,7 +22,7 @@ class Key < ActiveRecord::Base
   end
   
   def short_most_voted(lang)
-    most_voted(lang).truncate(40)
+    most_voted(lang).truncate(40) if most_voted(lang)
   end
   
 
