@@ -1,6 +1,8 @@
 <%= form_for [@key, @translation] do |f| %>
 	
 	<%= f.text_area :translation, :rows => 3, :cols => 53, :autofocus => true %><br>
-	<%= f.submit "Save translation", :class => "button" %>
-	
+	<%= button_group do %>
+		<%= button_submit_tag "Save translation" %>
+		<%= button_submit_tag "Save and Next", :name => "next" %>
+	<% end %>
 <% end %>

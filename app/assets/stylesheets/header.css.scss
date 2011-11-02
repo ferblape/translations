@@ -8,6 +8,7 @@ header{
 	padding: 5px 0px;
 	box-shadow: 0 0 10px #DDD;  
 	-moz-box-shadow: 0 0 10px #DDD;  
+	z-index:10;
 
 	
 	#logo{
@@ -26,13 +27,13 @@ header{
 	}
 	
 	#login{
-		padding:12px;	
-		float: right;
-		a{
-			padding:5px;
+		float:right;
+		.text{
+			padding-top:13px;
 		}
-		a:hover{
-			background-color: #EFF3FB;
+		.button{
+			margin-left:10px;
+			margin-right:10px;
 		}
 	}
 	

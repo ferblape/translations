@@ -10,11 +10,20 @@ class Key < ActiveRecord::Base
     t.translation
   end
 
+  def short_main_locale
+    main_locale.truncate(40)
+  end
+  
   def most_voted(language)
     if t = translations.where(:language => language).order("votes_count DESC").first
       t.translation
     end
   end
+  
+  def short_most_voted(lang)
+    most_voted(lang).truncate(40)
+  end
+  
 
   def to_hash(translation, locale)
     translation = "#{translation}"

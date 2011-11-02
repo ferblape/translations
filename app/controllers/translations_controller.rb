@@ -18,13 +18,17 @@ class TranslationsController < ApplicationController
     @translation.language = current_user.language
     if @translation.save_if_not_exist
       flash[:notice] = "New translation created"
-      redirect_to key_translations_path(@key)
+      if params[:next]
+        redirect_to key_translations_path(@translation.next) 
+      else
+        redirect_to key_translations_path(@key)
+      end
     else
       flash[:alert] = "Error: #{@translation.errors.full_messages.to_sentence}"
       redirect_to key_translations_path(@key)
     end
   end
-
+  
   def edit
   end
 

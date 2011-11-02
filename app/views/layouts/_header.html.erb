@@ -8,8 +8,8 @@
 <div id="login">
 <% if controller_name != "sessions" %>	
 	<% if session[:user_id] %>
-		<%= current_user.email %> <span id="logout"><%= link_to "Logout", logout_path %></span>
-		<%= link_to "exportar", export_path%>
+		<span class="text"><%= current_user.email %> <span id="logout"><%= link_to "Logout", logout_path %></span></span>
+		<%= button_link_to "export", export_path %>
 	<% else %>
 		<%= link_to "login", login_path %>
 	<% end %>
