@@ -16,10 +16,20 @@ class Key < ActiveRecord::Base
     end
   end
 
-  def export
-    # send_file (generated)
-    #
+  def to_hash(translation, locale)
+    translation = "#{translation}"
+    arr = key.split(".")
+    arr = arr.unshift locale
+    arr.reverse.inject(translation) { |a, n| { n => a } }
+  end
 
+
+  def self.export(locale)
+    hash = {}
+    all.each do |k|
+      hash = hash.rmerge(k.to_hash(k.most_voted(locale), locale))
+    end
+    hash.ya2yaml(:syck_compatible => true)
   end
 
   # Valid options:
