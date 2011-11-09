@@ -21,7 +21,7 @@ class TranslationsController < ApplicationController
     if @translation.save_if_not_exist
       flash[:notice] = "New translation created"
       if params[:next]
-        redirect_to key_translations_path(@translation.next(current_user.language))
+        redirect_to key_translations_path(@translation.next)
       else
         redirect_to key_translations_path(@key)
       end
