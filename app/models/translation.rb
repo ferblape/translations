@@ -42,6 +42,9 @@ class Translation < ActiveRecord::Base
     Key.where("id > #{self.key_id}").order('id ASC').first
   end
 
+  def key_string
+    self.key.key
+  end
 
   private
 
