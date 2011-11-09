@@ -3,14 +3,16 @@ class Translation < ActiveRecord::Base
   belongs_to :key
   belongs_to :user
   has_many :votes, :dependent => :destroy
-  # scope :order_by_votes, order("#{translations}.votes_count DESC")
+
+  attr_protected :user_id
 
   validates :language, :presence => true
   validates :translation, :presence => true
   validates :language, :inclusion => { :in => %w{en es}}
 
   after_create :create_or_update_vote
-
+  before_validation :user_language
+  
   def translation=(value)
     write_attribute(:translation, value.strip)
   end
@@ -49,6 +51,10 @@ class Translation < ActiveRecord::Base
     else
       votes.create(:user => user)
     end
+  end
+  
+  def user_language
+    self.language = user.language
   end
 
 end

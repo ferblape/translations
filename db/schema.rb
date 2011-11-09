@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110929143437) do
+ActiveRecord::Schema.define(:version => 20111109132854) do
 
   create_table "keys", :force => true do |t|
     t.string   "key"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20110929143437) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "language"
+    t.boolean  "is_admin",        :default => false
   end
 
   create_table "votes", :force => true do |t|

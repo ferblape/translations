@@ -18,7 +18,6 @@ class TranslationsController < ApplicationController
   def create
     @translation = @key.translations.new(params[:translation])
     @translation.user = current_user
-    @translation.language = current_user.language
     if @translation.save_if_not_exist
       flash[:notice] = "New translation created"
       if params[:next]

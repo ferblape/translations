@@ -3,6 +3,7 @@
 class KeysController < ApplicationController
 
   before_filter :login_required
+  before_filter :admin_required, :only => :export
 
   def index
     if params[:search]

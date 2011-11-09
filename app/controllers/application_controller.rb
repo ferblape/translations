@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def admin_required
+    return render_404 unless current_user.is_admin?   
+  end
+  
 end

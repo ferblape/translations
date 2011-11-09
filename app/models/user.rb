@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :votes, :dependent => :destroy
   has_many :translations, :dependent => :destroy
   
+  attr_protected :is_admin
+  
   validates :email, :uniqueness => true, :presence => true
   validates :username, :uniqueness => true, :presence => true
   validates :password, {:presence => {:on => :create}, :length => {:minimum => 4, :on => :create}}
