@@ -7,7 +7,7 @@ class KeysController < ApplicationController
 
   def index
     if params[:search]
-      @keys = Key.where("translation LIKE '%#{params[:search]}%'").joins(:translations).select("distinct(keys.id)")
+      @keys = Key.where("translation LIKE '%#{params[:search]}%'").joins(:translations).select("distinct(keys.id)").paginate(:page => params[:page], :per_page => 20)
     else
       @keys = Key.order_by_non_translated_desc(current_user.language).paginate(:page => params[:page], :per_page => 20)
     end

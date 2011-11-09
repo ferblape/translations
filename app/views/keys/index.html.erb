@@ -1,3 +1,11 @@
+<div class="import-export">
+	<% if current_user.is_admin? %>
+ 		<%= minor_button_group do %>
+			<%= button_link_to "import", import_path %>
+			<%= button_link_to "export", export_path %>
+ 		<% end %>	
+	<% end %>	
+</div>
 <div id="search">
 <%= form_tag keys_path, :method => 'get' do %>
 	<%= search_field_tag :search, params[:search], :placeholder => "Search", :results => 5 %>
