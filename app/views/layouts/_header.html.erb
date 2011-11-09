@@ -1,19 +1,19 @@
-
 <header>
-<div id="logo">
-	<%= link_to image_tag("logo-toldo.png", :height => "100%"), keys_path%>
-</div>
-<span id="textlogo"><%= link_to "Translate", keys_path%></span>
+  <div id="logo">
+    <%= link_to image_tag("logo-toldo.png", :height => "100%"), keys_path%>
+  </div>
+  <span id="textlogo"><%= link_to "Translate", keys_path %></span>
 
-<div id="login">
-<% if controller_name != "sessions" %>	
-	<% if session[:user_id] %>
-		<span class="text"><%= current_user.email %> <span id="logout"><%= link_to "Logout", logout_path %></span></span>
-		<%= button_link_to "export", export_path %>
-	<% else %>
-		<%= link_to "login", login_path %>
-	<% end %>
-<% end %>
-</div>
-
+  <div id="login">
+  <% if controller_name != "sessions" %>
+    <% if session[:user_id] %>
+      <span class="text"><%= current_user.email %> (<%= current_user.language %>)
+        <span id="logout"><%= link_to "Logout", logout_path %></span>
+      </span>
+      <%= button_link_to "export", export_path %>
+    <% else %>
+      <%= link_to "login", login_path %>
+    <% end %>
+  <% end %>
+  </div>
 </header>

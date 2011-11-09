@@ -1,8 +1,11 @@
 # coding: UTF-8
+
 class TranslationsController < ApplicationController
+
   before_filter :load_key
   before_filter :load_reference_translation
   before_filter :login_required
+
   def index
      @translation = @key.translations.new(:user => current_user)
     @translations = @key.translations.where("language = ?", current_user.language).order('votes_count DESC')
@@ -19,7 +22,7 @@ class TranslationsController < ApplicationController
     if @translation.save_if_not_exist
       flash[:notice] = "New translation created"
       if params[:next]
-        redirect_to key_translations_path(@translation.next) 
+        redirect_to key_translations_path(@translation.next(current_user.language))
       else
         redirect_to key_translations_path(@key)
       end
@@ -28,7 +31,7 @@ class TranslationsController < ApplicationController
       redirect_to key_translations_path(@key)
     end
   end
-  
+
   def edit
   end
 
@@ -36,6 +39,7 @@ class TranslationsController < ApplicationController
   end
 
   protected
+
     def load_key
       unless @key = Key.find(params[:key_id])
         render_404 and return false
