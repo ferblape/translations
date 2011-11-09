@@ -15,7 +15,7 @@ class ImportController < ApplicationController
       return  
     end
     
-    import = File.open("tmp/#{Time.now.to_i}_#{Rails.configuration.main_locale}.yml", 'wb')
+    import = File.open("tmp/imported_ymls/#{Time.now.to_i}_#{Rails.configuration.main_locale}.yml", 'wb')
     import.write(params[:file].read)
     import.close
     
