@@ -124,8 +124,9 @@ class Key < ActiveRecord::Base
   scope :order_by_non_translated_asc,  lambda{ |language| order_by_non_translated(language).order("keys.id ASC")  }
 
   def main_locale
-    t = translations.where(:language => Rails.configuration.main_locale).first
-    t.translation
+    if t = translations.where(:language => Rails.configuration.main_locale).first
+      t.translation
+    end
   end
 
   def short_main_locale

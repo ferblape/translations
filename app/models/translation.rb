@@ -54,7 +54,7 @@ class Translation < ActiveRecord::Base
   end
   
   def user_language
-    self.language = user.language
+    self.language = user ? user.language : Rails.configuration.main_locale
   end
 
 end

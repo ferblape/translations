@@ -1,5 +1,5 @@
 development:
-  main_locale: :en
+  main_locale: :es
 test:
   main_locale: :en
 production:
