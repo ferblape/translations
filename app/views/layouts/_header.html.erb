@@ -10,7 +10,7 @@
       <span class="text"><%= current_user.email %> (<%= current_user.language %>)
         <span id="logout"><%= link_to "Logout", logout_path %></span>
       </span>
- 		<% else %>
+    <% else %>
       <%= link_to "login", login_path %>
     <% end %>
   <% end %>

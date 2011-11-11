@@ -1,5 +1,7 @@
 # coding: UTF-8
+
 class Translation < ActiveRecord::Base
+
   belongs_to :key
   belongs_to :user
   has_many :votes, :dependent => :destroy
@@ -12,7 +14,7 @@ class Translation < ActiveRecord::Base
 
   after_create :create_or_update_vote
   before_validation :user_language
-  
+
   def translation=(value)
     write_attribute(:translation, value.strip)
   end
@@ -55,7 +57,7 @@ class Translation < ActiveRecord::Base
       votes.create(:user => user)
     end
   end
-  
+
   def user_language
     self.language = user ? user.language : Rails.configuration.main_locale
   end

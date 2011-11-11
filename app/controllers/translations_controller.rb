@@ -7,7 +7,7 @@ class TranslationsController < ApplicationController
   before_filter :login_required
 
   def index
-     @translation = @key.translations.new(:user => current_user)
+    @translation = @key.translations.new(:user => current_user)
     @translations = @key.translations.where("language = ?", current_user.language).order('votes_count DESC')
   end
 

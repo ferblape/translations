@@ -1,13 +1,13 @@
+# coding: UTF-8
+
 class UsersController < ApplicationController
-  
-  
-  
+
   def new
     @user = User.new
   end
-  
+
   def create
-    @user = User.new(params[:user]) 
+    @user = User.new(params[:user])
     if @user.save
       flash[:notice] = "New user added"
       session[:user_id] = @user.id
@@ -17,6 +17,5 @@ class UsersController < ApplicationController
       render :new
     end
   end
-  
-  
+
 end

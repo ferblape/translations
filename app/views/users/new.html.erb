@@ -1,20 +1,20 @@
-<%=form_for @user do |f| %>
+<%= form_for @user do |f| %>
 
-	<%= f.label :email, "Email: "%>
-	<%= f.email_field :email %>
-	
-	<%= f.label :username, "Username: "%>
-	<%= f.text_field :username %>
-	
-	<%= f.label :password, "Password: "%>
-	<%= f.password_field :password %>
-	
-	<%= f.label :password_confirmation, "Confirm password: "%>
-	<%= f.password_field :password_confirmation %>
-	
-	<%= f.label :language, "Language: "%>
-	<%= f.select :language, [["Spanish","es"],["English","en"]] %>
-<br><br>
-	<%= f.submit "Sign Up" %>
+  <%= f.label :email, "Email: "%>
+  <%= f.email_field :email %>
+
+  <%= f.label :username, "Username: "%>
+  <%= f.text_field :username %>
+
+  <%= f.label :password, "Password: "%>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, "Confirm password: "%>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.label :language, "Language: "%>
+  <%= f.select :language, [["Spanish","es"],["English","en"]] %>
+  <br><br>
+  <%= f.submit "Sign Up" %>
+
 <% end %>
-	

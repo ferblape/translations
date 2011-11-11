@@ -1,8 +1,10 @@
 <%= form_for [@key, @translation] do |f| %>
-	
-	<%= f.text_area :translation, :rows => 3, :cols => 53, :autofocus => true %><br>
-	<%= button_group do %>
-		<%= button_submit_tag "Save translation" %>
-		<%= button_submit_tag "Save and Next", :name => "next" %>
-	<% end %>
+
+  <%= f.text_area :translation, :rows => 3, :cols => 53, :autofocus => true %><br>
+
+  <%= button_group do %>
+    <%= button_submit_tag "Save translation" %>
+    <%= button_submit_tag "Save and Next", :name => "next" %>
+  <% end %>
+
 <% end %>
