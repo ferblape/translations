@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'will_paginate'
 gem 'bcrypt-ruby'
 gem "rake", "0.8.7"
+gem "pg", "~> 0.11.0"
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
