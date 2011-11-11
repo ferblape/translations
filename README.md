@@ -1,4 +1,7 @@
-# Translations #
+    888888 88""Yb    db    88b 88 .dP"Y8 88        db    888888 88  dP"Yb  88b 88 .dP"Y8 
+      88   88__dP   dPYb   88Yb88 `Ybo." 88       dPYb     88   88 dP   Yb 88Yb88 `Ybo." 
+      88   88"Yb   dP__Yb  88 Y88 o.`Y8b 88  .o  dP__Yb    88   88 Yb   dP 88 Y88 o.`Y8b 
+      88   88  Yb dP""""Yb 88  Y8 8bodP' 88ood8 dP""""Yb   88   88  YbodP  88  Y8 8bodP'
 
 Translations is a collaborative web application that helps you to manage the
 I18n translations of your Rails application.
