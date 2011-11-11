@@ -8,7 +8,7 @@ class Key < ActiveRecord::Base
   validates :key, :uniqueness => true, :presence => true
 
   scope :order_by_non_translated, lambda{ |language|
-    select("distinct(keys.*), (select count(*) as count from translations where keys.id = translations.key_id and translations.language = '#{language}') as count").
+    select("distinct(keys.id), keys.key, (select count(*) as count from translations where keys.id = translations.key_id and translations.language = '#{language}') as count").
     from("keys, translations").
     where("keys.id = translations.key_id").
     order("count ASC")
@@ -18,8 +18,9 @@ class Key < ActiveRecord::Base
   scope :order_by_non_translated_asc,  lambda{ |language| order_by_non_translated(language).order("keys.id ASC")  }
 
   def main_locale
-    t = translations.where(:language => Rails.configuration.main_locale).first
-    t.translation
+    if t = translations.where(:language => Rails.configuration.main_locale).first
+      t.translation
+    end
   end
 
   def short_main_locale
