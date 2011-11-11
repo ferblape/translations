@@ -1,0 +1,42 @@
+require "bundler/capistrano"
+
+set :application, "translations"
+set :repository,  "git://github.com/ferblape/translations.git"
+
+set :scm, :git
+
+# Set your host here
+set :host, 'xxxxxxxxxxx'
+
+role :web, host
+role :app, host
+role :db,  host
+
+# Set your SCM User
+set :scm_user, 'xxxxx'
+set :use_sudo, false
+ssh_options[:forward_agent] = true
+set :keep_releases, 5
+
+# Set the folder where your application is deployed
+set(:deploy_to){
+  "xxxxxxxxxx"
+}
+
+before "db:setup", "deploy:update_code", "bundle:install"
+after "deploy:symlink", :run_migrations
+after "deploy", "deploy:cleanup"
+
+desc "Restart Application"
+deploy.task :restart, :roles => [:app] do
+  run "touch #{current_path}/tmp/restart.txt"
+end
+
+desc "Migraciones"
+task :run_migrations, :roles => [:app] do
+  run <<-CMD
+    export RAILS_ENV=production &&
+    cd #{release_path} &&
+    rake db:migrate --trace
+  CMD
+end
