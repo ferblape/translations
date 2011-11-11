@@ -3,7 +3,7 @@
 Translations is a collaborative web application that helps you to manage the
 I18n translations of your Rails application.
 
-## Disclaimer ## 
+## Disclaimer ##
 
 This tool is still under development, we still have a lot of work to do, 
 including specs, deployment strategies, improve the UI, and so on...
@@ -20,12 +20,12 @@ including specs, deployment strategies, improve the UI, and so on...
   - gem install bundler --pre
   - bundle install
 
-## Authors ## 
+## Authors ##
 
   - Matías Reyes  [@matias_reyes](http://twitter.com/#!/matias_reyes)
   - Fernando Blat [@ferblape](http://twitter.com/#!/ferblape)
   
-## License ## 
+## License ##
 
 ### Poetic License ###
 
