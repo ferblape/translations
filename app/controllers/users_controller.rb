@@ -8,6 +8,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    if User.count == 0
+      @user.is_admin = true
+    end
     if @user.save
       flash[:notice] = "New user added"
       session[:user_id] = @user.id
